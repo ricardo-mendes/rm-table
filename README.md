@@ -1,2 +1,2 @@
 # rm-table
-Angular component for table
+RmTable is Angular2 components to display data in a table
