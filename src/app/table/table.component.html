@@ -1,8 +1,8 @@
-<table > 
+<table> 
     <app-table-header [columnsName]="columnsName"></app-table-header>
     <tbody>
-      <tr *ngFor="let user of data">
-        <app-table-row [rowData]="user"></app-table-row>
+      <tr *ngFor="let item of items">
+        <app-table-row [item]="item"></app-table-row>
       </tr>
     </tbody>
 </table>

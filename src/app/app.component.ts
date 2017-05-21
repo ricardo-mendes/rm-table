@@ -7,20 +7,18 @@ import { User } from './user';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  public users: Array<User>;
+  public items: Array<any>;
   public showTable: boolean;
   
   ngOnInit() {
   }
 
-  public updateUsers(users: Array<User>){
-    if(users != undefined)
-    {
-      this.showTable = users.length > 0 ? true : false;
-      console.log("Em app componente === ", users);
-      this.users = users;
+  public updateItems(data: Array<any>){
+    if(data != undefined){
+      this.showTable = data.length > 0 ? true : false;
+      console.log("Em app componente === ", data);
+      this.items = data;
     }
-    
   }
 
 }

@@ -8,14 +8,13 @@ import { User } from './../user';
 })
 export class TableComponent implements OnInit {
 
-  @Input() data: User[];
+  @Input() items: any[];
   public columnsName: string[];
  
-
   constructor() { }
 
   ngOnInit() {
-    console.log(this.data);
+    console.log(this.items);
     this.columnsName = new Array<string>();
     this.columnsName.push("Name");
     this.columnsName.push("Email");

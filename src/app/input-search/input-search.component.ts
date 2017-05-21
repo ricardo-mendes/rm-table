@@ -24,7 +24,7 @@ export class InputSearchComponent implements OnInit {
     this.searchUpdated.emit(this.users);
   }
 
-  public updateUsers(val: string): void{
+  public updateItems(val: string): void{
     console.log(val);
     this.searchData = val;
     this.users = this.aalUsers;

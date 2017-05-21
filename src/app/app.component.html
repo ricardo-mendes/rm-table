@@ -1,4 +1,4 @@
-<app-input-search (searchUpdated)="updateUsers($event)"></app-input-search>
+<app-input-search (searchUpdated)="updateItems($event)"></app-input-search>
 <br/>
-<app-table *ngIf="showTable; else showMessage"  [data]="users"></app-table>
+<app-table *ngIf="showTable; else showMessage"  [items]="items"></app-table>
 <ng-template #showMessage>Nenhum dado encontrado!</ng-template>

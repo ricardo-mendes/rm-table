@@ -7,11 +7,13 @@ import { User } from './../user';
   styleUrls: ['./table-row.component.css']
 })
 export class TableRowComponent implements OnInit {
-  @Input() rowData: User;
+  @Input() item: any;
+  public itemProperties: any[];
 
   constructor() { }
 
   ngOnInit() {
+    this.itemProperties = Object.getOwnPropertyNames(this.item); 
   }
 
 }
