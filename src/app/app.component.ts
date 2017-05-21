@@ -10,8 +10,13 @@ export class AppComponent implements OnInit {
   public aalUsers: Array<User>;
   public users: Array<User>;
   public showTable: boolean = true;
+  public columnsName: Array<string>;
   
   ngOnInit() {
+    this.columnsName = new Array<string>();
+    this.columnsName.push("Name");
+    this.columnsName.push("Email");
+    
     this.aalUsers = new Array<User>();
     this.aalUsers.push(new User('a', 'a'));
     this.aalUsers.push(new User('1', '1'))

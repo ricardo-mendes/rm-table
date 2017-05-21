@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { User } from './../user';
 
 @Component({
@@ -6,18 +6,9 @@ import { User } from './../user';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css']
 })
-export class TableComponent implements OnInit {
+export class TableComponent {
 
   @Input() items: any[];
-  public columnsName: string[];
- 
-  constructor() { }
-
-  ngOnInit() {
-    console.log(this.items);
-    this.columnsName = new Array<string>();
-    this.columnsName.push("Name");
-    this.columnsName.push("Email");
-  }
+  @Input() columnsName: string[];
 
 }
