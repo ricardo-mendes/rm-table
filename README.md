@@ -1,5 +1,5 @@
 # RmTable
-RmTable is Angular2 components to display and filter data in a table.
+RmTable is Angular 4 component to display and filter data in a table.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.1.
 
 ## Development server
