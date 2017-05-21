@@ -7,17 +7,25 @@ import { User } from './user';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  public items: Array<any>;
-  public showTable: boolean;
+  public aalUsers: Array<User>;
+  public users: Array<User>;
+  public showTable: boolean = true;
   
   ngOnInit() {
+    this.aalUsers = new Array<User>();
+    this.aalUsers.push(new User('a', 'a'));
+    this.aalUsers.push(new User('1', '1'))
+    this.aalUsers.push(new User('Ricardo Mendes', 'rmendes@hotmail.com'));
+    this.aalUsers.push(new User('Ricardo Silva', 'rsilva@hotmail.com'));
+    this.aalUsers.push(new User('Kamila Alvarez', 'kamila05@hotmail.com'));
+    this.users = this.aalUsers;
   }
 
-  public updateItems(data: Array<any>){
-    if(data != undefined){
-      this.showTable = data.length > 0 ? true : false;
-      console.log("Em app componente === ", data);
-      this.items = data;
+  public updateItems(items: Array<any>){
+    if(items != undefined){
+      this.showTable = items.length > 0 ? true : false;
+      console.log("Em app componente === ", items);
+      this.users = items;
     }
   }
 

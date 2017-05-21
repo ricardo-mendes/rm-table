@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { User } from './../user';
 
 @Component({
@@ -8,30 +8,23 @@ import { User } from './../user';
 })
 export class InputSearchComponent implements OnInit {
   @Output() searchUpdated = new EventEmitter();
-  public aalUsers: Array<User>;
-  public users: Array<User>;
+  @Input() aalItems: Array<any>;
+  public items: Array<any>;
   public searchData: string;
+  public itemProperties:  Array<any>;
 
   ngOnInit() {
-    console.log("input Component");
-    this.aalUsers = new Array<User>();
-    this.aalUsers.push(new User('a', 'a'));
-    this.aalUsers.push(new User('1', '1'))
-    this.aalUsers.push(new User('Ricardo Mendes', 'rmendes@hotmail.com'));
-    this.aalUsers.push(new User('Ricardo Silva', 'rsilva@hotmail.com'));
-    this.aalUsers.push(new User('Kamila Alvarez', 'kamila05@hotmail.com'));
-    this.users = this.aalUsers;
-    this.searchUpdated.emit(this.users);
+      this.itemProperties = Object.getOwnPropertyNames(this.aalItems[0]); 
   }
 
   public updateItems(val: string): void{
-    console.log(val);
     this.searchData = val;
-    this.users = this.aalUsers;
+    this.items = this.aalItems;
     if(this.searchData != ""){
-      this.users = this.aalUsers.filter(u => u.name.toLocaleLowerCase().search(this.searchData.toLocaleLowerCase()) > -1 
-      || u.email.toLocaleLowerCase().search(this.searchData.toLocaleLowerCase()) > - 1);
+      this.items = this.aalItems.filter(item => item[this.itemProperties[0]].toLocaleLowerCase().search(this.searchData.toLocaleLowerCase()) > -1 
+        || item[this.itemProperties[1]].toLocaleLowerCase().search(this.searchData.toLocaleLowerCase()) > - 1);
     }
-    this.searchUpdated.emit(this.users);
+    this.searchUpdated.emit(this.items);
   }
 }
+
