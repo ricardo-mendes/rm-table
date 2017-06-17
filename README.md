@@ -14,3 +14,5 @@ Run ng test to execute the unit tests via [Karma](https://karma-runner.github.io
 ## Features
 - Show rows and columns.
 - Filtering.
+
+(https://user-images.githubusercontent.com/6324794/27255894-2dcc28fa-537e-11e7-85c0-7c84d769be09.png)
