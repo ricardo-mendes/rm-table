@@ -15,4 +15,5 @@ Run ng test to execute the unit tests via [Karma](https://karma-runner.github.io
 - Show rows and columns.
 - Filtering.
 
-#![rmtable](https://user-images.githubusercontent.com/6324794/27255894-2dcc28fa-537e-11e7-85c0-7c84d769be09.png)
+![newtable](https://user-images.githubusercontent.com/6324794/27255940-3fda5d5e-537f-11e7-9de1-ad38570f0c63.png)
+
