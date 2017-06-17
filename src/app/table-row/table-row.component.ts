@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { User } from './../user';
 
 @Component({
-  selector: 'app-table-row',
+  selector: '[app-table-row]',
   templateUrl: './table-row.component.html',
   styleUrls: ['./table-row.component.css']
 })

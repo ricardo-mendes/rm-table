@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   public users: Array<User>;
   public showTable: boolean = true;
   public columnsName: Array<string>;
+  public searchPlaceholder: string;
   
   ngOnInit() {
     this.columnsName = new Array<string>();
@@ -18,12 +19,12 @@ export class AppComponent implements OnInit {
     this.columnsName.push("Email");
     
     this.aalUsers = new Array<User>();
-    this.aalUsers.push(new User('a', 'a'));
-    this.aalUsers.push(new User('1', '1'))
-    this.aalUsers.push(new User('Ricardo Mendes', 'rmendes@hotmail.com'));
-    this.aalUsers.push(new User('Ricardo Silva', 'rsilva@hotmail.com'));
-    this.aalUsers.push(new User('Kamila Alvarez', 'kamila05@hotmail.com'));
+    this.aalUsers.push(new User('Ricardo Mendes', 'ricardo_mendes@hotmail.com'));
+    this.aalUsers.push(new User('Ricardo Junior', 'ricardo_junior@gmail.com'));
+    this.aalUsers.push(new User('Mendes Silva', 'mendes_silva@hotmail.com'));
     this.users = this.aalUsers;
+
+    this.searchPlaceholder = "Search by name or email";
   }
 
   public updateItems(items: Array<any>){

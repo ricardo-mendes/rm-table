@@ -1,8 +1,7 @@
-<table> 
-    <app-table-header [columnsName]="columnsName"></app-table-header>
+<table class="table table-striped"> 
+    <thead app-table-header [columnsName]="columnsName"></thead>
     <tbody>
-      <tr *ngFor="let item of items">
-        <app-table-row [item]="item"></app-table-row>
+      <tr *ngFor="let item of items" app-table-row [item]="item">
       </tr>
     </tbody>
 </table>

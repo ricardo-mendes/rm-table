@@ -1,1 +1,7 @@
-<input type="text" [(ngModel)]="searchData" (ngModelChange)="updateItems($event)"/>
+<div class="form-group row">
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="searchData" placeholder="{{searchPlaceholder}}" (ngModelChange)="updateItems($event)">
+    </div>
+    <span class="col-sm-2 col-form-label fa fa-search"></span>
+</div>
+ 
