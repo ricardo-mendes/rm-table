@@ -1,4 +1,18 @@
-<app-input-search [aalItems]="aalUsers" (searchUpdated)="updateItems($event)"></app-input-search>
-<br/>
-<app-table *ngIf="showTable; else showMessage" [columnsName]="columnsName" [items]="users"></app-table>
-<ng-template #showMessage>Nenhum dado encontrado!</ng-template>
+<div class="container">  
+    <div class="row">
+        <div class="col-12">
+            <h2>RM Table</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <app-input-search [aalItems]="aalUsers" searchPlaceholder="{{searchPlaceholder}}" (searchUpdated)="updateItems($event)"></app-input-search>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <app-table *ngIf="showTable; else showMessage" [columnsName]="columnsName" [items]="users"></app-table>
+            <ng-template #showMessage>No data found!</ng-template>
+        </div>
+    </div>
+</div>

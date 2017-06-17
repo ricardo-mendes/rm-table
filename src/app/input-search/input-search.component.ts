@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter, SimpleChanges } from '@angular/core';
 import { User } from './../user';
 
 @Component({
@@ -9,6 +9,7 @@ import { User } from './../user';
 export class InputSearchComponent implements OnInit {
   @Output() searchUpdated = new EventEmitter();
   @Input() aalItems: Array<any>;
+  @Input() searchPlaceholder: string;
   public items: Array<any>;
   public searchData: string;
   public itemProperties:  Array<any>;
