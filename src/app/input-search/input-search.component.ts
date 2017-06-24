@@ -8,24 +8,33 @@ import { User } from './../user';
 })
 export class InputSearchComponent implements OnInit {
   @Output() searchUpdated = new EventEmitter();
-  @Input() aalItems: Array<any>;
+  @Input() allItems: Array<any>;
   @Input() searchPlaceholder: string;
   public items: Array<any>;
   public searchData: string;
   public itemProperties:  Array<any>;
 
   ngOnInit() {
-      this.itemProperties = Object.getOwnPropertyNames(this.aalItems[0]); 
+      this.itemProperties = Object.getOwnPropertyNames(this.allItems[0]); 
   }
 
   public updateItems(val: string): void{
     this.searchData = val;
-    this.items = this.aalItems;
-    if(this.searchData != ""){
-      this.items = this.aalItems.filter(item => item[this.itemProperties[0]].toLocaleLowerCase().search(this.searchData.toLocaleLowerCase()) > -1 
-        || item[this.itemProperties[1]].toLocaleLowerCase().search(this.searchData.toLocaleLowerCase()) > - 1);
-    }
+    this.items = this.allItems;
+    this.items = this.filterSearchDataInAllItems(this.searchData);
     this.searchUpdated.emit(this.items);
+  }
+
+  private filterSearchDataInAllItems(val: string){
+    let properties = this.itemProperties;
+    return this.allItems.filter(function(item) {
+      for(var i = 0; i < properties.length; i++)
+      {
+          if(item[properties[i]].toLocaleLowerCase().search(val.toLocaleLowerCase()) > -1){
+            return true;
+          }
+      }
+    });
   }
 }
 
