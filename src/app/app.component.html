@@ -6,7 +6,7 @@
     </div>
     <div class="row">
         <div class="col-6">
-            <app-input-search [allItems]="allUsers" searchPlaceholder="{{searchPlaceholder}}" (searchUpdated)="updateItems($event)"></app-input-search>
+            <app-input-search [allItems]="allUsers" [itemProperties]="searchableProperties"  searchPlaceholder="{{searchPlaceholder}}" (searchUpdated)="updateItems($event)"></app-input-search>
         </div>
     </div>
     <div class="row">

@@ -10,12 +10,14 @@ export class InputSearchComponent implements OnInit {
   @Output() searchUpdated = new EventEmitter();
   @Input() allItems: Array<any>;
   @Input() searchPlaceholder: string;
+  @Input() itemProperties: Array<string>;
   public items: Array<any>;
   public searchData: string;
-  public itemProperties:  Array<any>;
 
   ngOnInit() {
+    if(this.itemProperties == null){
       this.itemProperties = Object.getOwnPropertyNames(this.allItems[0]); 
+    }
   }
 
   public updateItems(val: string): void{
@@ -28,8 +30,7 @@ export class InputSearchComponent implements OnInit {
   private filterSearchDataInAllItems(val: string){
     let properties = this.itemProperties;
     return this.allItems.filter(function(item) {
-      for(var i = 0; i < properties.length; i++)
-      {
+      for(var i = 0; i < properties.length; i++){
           if(item[properties[i]].toLocaleLowerCase().search(val.toLocaleLowerCase()) > -1){
             return true;
           }
